@@ -2,7 +2,13 @@
 
 
 let num1 = 1357;
-console.log(num1);
 let num2 = 135.7;
 let num3 = 135e7;
 let num4 = 0b1010;
+
+console.log(num1);
+console.log(num2);
+console.log(num3);
+console.log(num4);
+
+
