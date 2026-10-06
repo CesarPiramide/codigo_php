@@ -6,11 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Aqui podras ver los tiempos de carrera de cada corredor</h1> <hr>
+    <h1>Aquí podras ver todos los platos</h1> <hr>
     <form>
-        <label for="Buscardorsal">Pon el dorsal del corredor</label>
-        <input name="Buscardorsal">
-        <input type="submit">
+        <label for="Buscarplato">Pon el nombre del plato:</label>
+        <input name="Buscarplato">
+        <input type="submit" value="Filtrar">
     </form>
 </body>
+<br>
+<a href="index.html">Volver a inicio</a> 
 </html>

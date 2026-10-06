@@ -6,11 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    Hola, <?php echo $_POST['Nombre'];?> <br>
-    Tu tiempo es: <?php echo $_POST['Tiempo']; ?> <br>
+    El plato es:  <?php echo $_POST['Nombre'];?> <br>
+    Los ingredientes son: <?php echo $_POST['Ingrediente'];?><br>
+    Es un: <?php echo $_POST['Tipo']; ?> <br>
+    Tiene un precio de: <?php echo $_POST['Precio']; ?><br>
+
+    <br>
+    <a href="Verdatos.php">Ver platos guardados</a>
+
 </body>
 </html>
-
+  
 
 <?php
     if(empty($_POST['Nombre'])){
@@ -19,10 +25,15 @@
         $mostrarnombre = ($_GET['Nombre']);
     }
 
-    if(empty($_POST['Tiempo'])){
-        echo "No has introducido el tiempo";
+    if(empty($_POST['Tipo'])){
+        echo "No has introducido el tipo de plato";
     } else{
-        $mostrarTiempo ($_GET['Tiempo']);
+        $mostrartipo ($_GET['Tipo']);
     }
 
+     $plato = array(
+        'nombre' => $_POST['Nombre'],
+        'ingredientes' => $_POST['Ingrediente'],
+        'tipo' => $_POST['Tipo']
+    );
 ?>
