@@ -165,7 +165,10 @@ let d = b++;
 
 console.log("a =", a);
 console.log("b =", b);
-console.log("c =", c); */
+console.log("c =", c); 
+
+
+
 
 
 // 14 Cual sera el resultado de las siguientes expresiones?
@@ -177,5 +180,34 @@ undefined == null
 undefined === null
 null == "\n0\n"
 null === +"\n0\n"
+
+
+Escribe en un comentario el resultado que esperas de cada expresión y el tipo de dato del resultado. Después compruébalo por consola usando typeof.
+
+
+
+"5" + 3 //53
+"5" - 3 //2
+"5" * "2" //10
+true + 1 // 2
+"3" + 4 + 5 // 345
+3 + 4 + "5" //75
+
+
+
+Dado el siguiente código, muestra por consola el resultado de cantidad || 10 y de cantidad ?? 10 para cada una de las variables. ¿En qué casos dan resultados distintos? Si el valor 0 fuera una cantidad válida, ¿qué operador usarías? Razona la respuesta.
+
+PREGUNTAR POR ESTE EJERCICIO
+*/
+
+let cantidad1;
+let cantidad2 = null;
+let cantidad3 = 0;
+let cantidad4 = "";
+let cantidad5 = 5;
+
+console.log();
+
+
 
 

@@ -1,18 +1,32 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ver Platos</title>
 </head>
 <body>
-    <h1>Aquí podras ver todos los platos</h1> <hr>
-    <form>
-        <label for="Buscarplato">Pon el nombre del plato:</label>
-        <input name="Buscarplato">
-        <input type="submit" value="Filtrar">
-    </form>
+    <h1>Listado de Platos</h1><hr>
+    
+    <?php
+    if(!empty($_SESSION['platos'])){
+        foreach($_SESSION['platos'] as $id => $plato){
+            echo "<h3>{$plato['nombre']} - {$plato['precio']}€</h3>";
+            echo "<p>Ingredientes: {$plato['ingredientes']}</p>";
+            echo "<p>Tipo: {$plato['tipo']}</p>";
+            echo "<a href='Editar.php?id=$id'>Editar</a>";
+        }
+    } else {
+        echo "<p>No hay platos guardados</p>";
+    }
+    ?>
+    
+    <br><hr>
+    <a href="Almacenardatos.php">Añadir nuevo plato</a>
+    <br>
+    <a href="index.html">Inicio</a>
 </body>
-<br>
-<a href="index.html">Volver a inicio</a> 
 </html>

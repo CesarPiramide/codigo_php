@@ -6,10 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    El plato es:  <?php echo $_POST['Nombre'];?> <br>
-    Los ingredientes son: <?php echo $_POST['Ingrediente'];?><br>
-    Es un: <?php echo $_POST['Tipo']; ?> <br>
-    Tiene un precio de: <?php echo $_POST['Precio']; ?><br>
+
+<?php
+session_start();
+
+if(!isset($_SESSION['platos'])){
+    $_SESSION['platos'] = array();
+}
+
+$_SESSION['platos'][] = array(
+    'nombre' => $_POST['Nombre'],
+    'ingredientes' => $_POST['Ingrediente'],
+    'tipo' => $_POST['Tipo'],
+    'precio' => $_POST['Precio']
+);
+
+header('Location: Verdatos.php');
+?>
 
     <br>
     <a href="Verdatos.php">Ver platos guardados</a>
@@ -17,23 +30,3 @@
 </body>
 </html>
   
-
-<?php
-    if(empty($_POST['Nombre'])){
-        echo "El Nombre es obligatorio";
-    } else{
-        $mostrarnombre = ($_GET['Nombre']);
-    }
-
-    if(empty($_POST['Tipo'])){
-        echo "No has introducido el tipo de plato";
-    } else{
-        $mostrartipo ($_GET['Tipo']);
-    }
-
-     $plato = array(
-        'nombre' => $_POST['Nombre'],
-        'ingredientes' => $_POST['Ingrediente'],
-        'tipo' => $_POST['Tipo']
-    );
-?>

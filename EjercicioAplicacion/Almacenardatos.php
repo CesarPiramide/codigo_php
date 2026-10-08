@@ -21,6 +21,8 @@
         <input name="Precio" required> <br> 
 
         <input type="Submit">
+
+
     </form>
 
     <br>
@@ -28,3 +30,4 @@
     <a href="index.html">Volver a inicio</a>
 </body>
 </html>
+
