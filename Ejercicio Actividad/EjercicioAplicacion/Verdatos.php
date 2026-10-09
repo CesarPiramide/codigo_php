@@ -1,8 +1,6 @@
 <?php
 include 'platos.php';
 
-$buscar = "";
-
 if(isset($_GET['buscar'])){
     $buscar = $_GET['buscar'];
 }
@@ -20,7 +18,7 @@ if(isset($_GET['buscar'])){
     <?php
     foreach($platos as $id => $plato){
         if($buscar == "" || $plato['nombre'] == $buscar){
-            echo "<h3>" . $plato['nombre'] . " : " . $plato['precio'] . "€</h3>";
+            echo "<h3>{$plato['nombre']} : {$plato['precio']} €</h3>";
             echo "<a href='Veringredientes.php'>Ver Ingredientes</a> ";
             echo "<a href='Editar.php?id=$id'>Editar</a> ";
             echo "<a href='Borrar.php?id=$id'>Borrar</a>";
