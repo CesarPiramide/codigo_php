@@ -1,19 +1,19 @@
+<?php
+
+include "platos.php";
+
+$plato = $_GET['nombre'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Listado de ingredientes</title>
 </head>
 <body>
-
-<?php
-header('Location: Verdatos.php');
-?>
-
-    <br>
-    <a href="Verdatos.php">Ver platos guardados</a>
-
+    <h1> <?php echo $plato['nombre'] ?></h1>
 </body>
 </html>
-  

@@ -1,32 +1,33 @@
 <?php
-session_start();
-?>
+include 'platos.php';
 
+if(isset($_GET['buscar'])){
+    $buscar = $_GET['buscar'];
+}
+?>
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Ver Platos</title>
-</head>
+<html>
 <body>
-    <h1>Listado de Platos</h1><hr>
-    
+    <h1>Listado de Platos</h1>
+
+    <form method="get">
+        <input name="buscar">
+        <input type="submit" value="Buscar">
+    </form>
+
     <?php
-    if(!empty($_SESSION['platos'])){
-        foreach($_SESSION['platos'] as $id => $plato){
-            echo "<h3>{$plato['nombre']} - {$plato['precio']}€</h3>";
-            echo "<p>Ingredientes: {$plato['ingredientes']}</p>";
-            echo "<p>Tipo: {$plato['tipo']}</p>";
-            echo "<a href='Editar.php?id=$id'>Editar</a>";
+    foreach($platos as $id => $plato){
+        if($buscar == "" || $plato['nombre'] == $buscar){
+            echo "<h3>{$plato['nombre']} : {$plato['precio']} €</h3>";
+            echo "<a href='Veringredientes.php'>Ver Ingredientes</a> ";
+            echo "<a href='Editar.php?id=$id'>Editar</a> ";
+            echo "<a href='Borrar.php?id=$id'>Borrar</a>";
         }
-    } else {
-        echo "<p>No hay platos guardados</p>";
     }
     ?>
-    
+
     <br><hr>
     <a href="Almacenardatos.php">Añadir nuevo plato</a>
-    <br>
-    <a href="index.html">Inicio</a>
+    <a href="index.html">Volver a inicio</a>
 </body>
 </html>

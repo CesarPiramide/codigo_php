@@ -197,8 +197,8 @@ true + 1 // 2
 
 Dado el siguiente código, muestra por consola el resultado de cantidad || 10 y de cantidad ?? 10 para cada una de las variables. ¿En qué casos dan resultados distintos? Si el valor 0 fuera una cantidad válida, ¿qué operador usarías? Razona la respuesta.
 
-PREGUNTAR POR ESTE EJERCICIO
-*/
+
+
 
 let cantidad1;
 let cantidad2 = null;
@@ -206,7 +206,59 @@ let cantidad3 = 0;
 let cantidad4 = "";
 let cantidad5 = 5;
 
-console.log();
+console.log(cantidad1 || 10); // 5  5
+console.log(cantidad2 )
+
+
+
+
+Crea un programa que pida al usuario un número entero de minutos y muestre cuántas horas y minutos son. Por ejemplo, para 135 debe mostrar "2 horas y 15 minutos". Solo puedes usar los operadores aritméticos. Antes de programarlo, comprueba por consola cuánto vale 135 / 60. ¿Qué diferencia hay con Java?
+
+
+
+console.log(135 / 60); 
+
+let total = Number(prompt("Pon solo los minutos:"));
+
+let minutos = total % 60;
+let horas = (total - minutos) / 60;
+
+alert(horas + " horas y " + minutos + " minutos");
+
+
+
+
+Escribe en un comentario qué crees que mostrará cada console.log. Después ejecútalo. Si alguna línea produce un error, explica por qué y coméntala para que el resto del código pueda ejecutarse.
+
+
+
+	console.log(a);  // mostrara undefined
+var a = 5;
+ 
+if (true) {
+  		var x = 1;
+  		let y = 2;
+}
+console.log(x); // mostrará 1
+console.log(y); // mostrará Error
+ 
+for (var i = 0; i < 3; i++) {}
+console.log(i); // Mostrará 3
+ 
+for (let j = 0; j < 3; j++) {}
+console.log(j); //Mostrará errpr
+
+
+Crea un programa que pida un texto al usuario y muestre "Has escrito algo" o "No has escrito nada". En la condición del if solo puedes poner la variable, sin ningún operador de comparación. Prueba con estas entradas y explica qué ocurre en cada caso:
+Un texto cualquiera
+Dejar el campo vacío
+Pulsar Cancelar
+Escribir 0
+Escribir un espacio
+
+
+*/
+
 
 
 
