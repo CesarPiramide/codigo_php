@@ -257,9 +257,75 @@ Escribir 0
 Escribir un espacio
 
 
+
+let texto = prompt("Escribe algo:");
+
+if (texto) {
+  alert("Has escrito algo");
+} else {
+  alert("No has escrito nada");
+}
+
+
+
+Usa el operador ternario (? :) para escribir un código que nos pida un número y nos muestre un mensaje si es mayor o igual que cero y otro mensaje si es menor estricto que cero. 20
+
+
+let numero = Number(prompt("Introduce un número:"));
+
+alert(numero >= 0 ? "El número es mayor o igual que cero" : "El número es menor que cero");
+
+
+Crea un programa utilizando la sentencia if else que pida al usuario que introduzca una edad (número entero) y muestre el siguiente mensaje en función del número introducido:
+0-12: Niño
+13-26: Joven
+27-65: Adulto
+>65: Jubilado
+Escribe las condiciones con el operador < (por ejemplo, edad < 13) para que ningún valor se quede sin categoría.21
+
+
+let edad = parseInt(prompt("Introduce tu edad:"));
+
+if (edad < 13) {
+  alert("Niño");
+} else if (edad < 27) {
+  alert("Joven");
+} else if (edad < 66) {
+  alert("Adulto");
+} else {
+  alert("Jubilado");
+}
+
+
+Crea un programa que sea un "pequeño traductor" de nombres de frutas. A partir de una lista de 5 frutas en español ("Pera", "Manzana", "Piña", "Fresa", "Naranja") el programa pedirá al usuario el nombre de una fruta y, en el caso de que corresponda al listado, le mostrará en un cuadro de diálogo la traducción al inglés. En el caso de otro texto mostrará "Fruta desconocida". Para este ejercicio debes usar una estructura switch.
+
+
+let fruta = prompt("Introduce el nombre de una fruta en español:");
+
+switch (fruta) {
+  case "Pera":
+    alert("Pear");
+    break;
+  case "Manzana":
+    alert("Apple");
+    break;
+  case "Piña":
+    alert("Pineapple");
+    break;
+  case "Fresa":
+    alert("Strawberry");
+    break;
+  case "Naranja":
+    alert("Orange");
+    break;
+  default:
+    alert("Fruta desconocida");
+}
+
+
+
+Mejora el ejercicio anterior de manera que el programa traduzca correctamente aunque la primera letra esté indistintamente en mayúscula o en minúscula. ¿Y si cualquier letra está en mayúscula o minúscula indistintamente?23
+
+
 */
-
-
-
-
 
