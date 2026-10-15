@@ -1,8 +1,19 @@
 <?php
+include 'Conexion.php';
 include 'platos.php';
 
-if(isset($_GET['buscar'])){
-    $buscar = $_GET['buscar'];
+$buscar = $_GET['buscar'] ?? "";
+
+if ($buscar == "") {
+    $sql = $conexion->query("SELECT * FROM plato");
+} else {
+    $sql = $conexion->prepare("SELECT * FROM plato WHERE nombre = ?");
+    $sql->execute([$buscar]);
+}
+
+$platos = [];
+foreach ($sql->fetchAll() as $fila) {
+    $platos[] = new Plato($fila['nombre'], $fila['precio'], $fila['tipo'], [], $fila['id']);
 }
 ?>
 <!DOCTYPE html>
@@ -16,13 +27,9 @@ if(isset($_GET['buscar'])){
     </form>
 
     <?php
-    foreach($platos as $id => $plato){
-        if($buscar == "" || $plato['nombre'] == $buscar){
-            echo "<h3>{$plato['nombre']} : {$plato['precio']} €</h3>";
-            echo "<a href='Veringredientes.php'>Ver Ingredientes</a> ";
-            echo "<a href='Editar.php?id=$id'>Editar</a> ";
-            echo "<a href='Borrar.php?id=$id'>Borrar</a>";
-        }
+    foreach($platos as $plato){
+        echo "<h3>{$plato->nombre} : {$plato->precio} €</h3>";
+        echo "<a href='Veringredientes.php?id={$plato->id}'>Ver Ingredientes</a> ";
     }
     ?>
 

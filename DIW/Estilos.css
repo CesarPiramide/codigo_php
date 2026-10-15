@@ -1,0 +1,50 @@
+.a {
+width: 200px;
+padding: 10px 20px;
+border: 5px solid;
+margin: 15px;
+}
+.b {
+box-sizing: border-box;
+width: 200px;
+padding: 10px 20px;
+border: 5px solid;
+}
+.c {
+width: 50%; /* el padre mide 800px */
+padding: 1rem; /* la raíz: 16px */
+border: 2px solid;
+}
+
+
+
+1 Calculad el ancho visible (content + padding + border) de las
+cajas .a, .b y .c.
+
+Caja a:
+Content: 200 px
+Padding horizontal: 20 + 20 = 40 px
+Borde horizontal: 5 + 5 = 10 px
+
+
+Caja b:
+Content: 200px
+Padding horizontal: 20 + 20 = 40px
+
+
+2 Calculad el espacio horizontal total que ocupa .a, incluido
+el margin.
+
+Margin horizontal: 15 + 15 = 30 px
+
+Espacio total = 250 + 30 = 280 px
+
+3 En .b, ¿cuánto mide el área de contenido?
+
+200-40-10 = 150
+
+4 Comprobad los resultados en la pestaña Computed de
+DevTools, que dibuja el modelo de cajas.
+
+
+

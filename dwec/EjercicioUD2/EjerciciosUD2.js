@@ -327,5 +327,11 @@ switch (fruta) {
 Mejora el ejercicio anterior de manera que el programa traduzca correctamente aunque la primera letra esté indistintamente en mayúscula o en minúscula. ¿Y si cualquier letra está en mayúscula o minúscula indistintamente?23
 
 
+
+
+Crea un array de 5 números de dos formas distintas. Investiga qué ocurre al crear un array con el constructor pasándole un único número, y cómo crear correctamente un array que contenga solo ese número. Explica la diferencia en un comentario.
+
 */
 
+Array =[0, 1, 2, 3, 4, 5]
+Array = new Array(1, 2, 3, 4, 5)
