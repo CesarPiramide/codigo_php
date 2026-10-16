@@ -19,14 +19,16 @@
 
         <p>Ingredientes:</p>
         <?php
-        $lista = ["Huevo", "Patata", "Cebolla", "Arroz", "Pollo", "Sal", "Tomate", "Ajo",
-                  "Leche", "Azúcar", "Harina", "Queso", "Jamón", "Pimiento", "Aceite"];
+include_once 'Conexion.php';
 
-        foreach ($lista as $ingrediente) {
-            echo "<label>$ingrediente</label>";
-            echo "<input type='checkbox' name='ingredientes[]' value='$ingrediente'><br>";
-        }
-        ?>
+$stmt = $conexion->query("SELECT DISTINCT nombre FROM ingrediente ORDER BY nombre");
+$ingredientes = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+foreach ($ingredientes as $ingrediente) {
+    echo "<label>$ingrediente</label>";
+    echo "<input type='checkbox' name='ingredientes[]' value='$ingrediente'><br>";
+}
+?>
         <br>
 
         <label for="Tipo">Tipo (primero/segundo/postre):</label>

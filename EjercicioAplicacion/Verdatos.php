@@ -30,6 +30,10 @@ foreach ($sql->fetchAll() as $fila) {
     foreach($platos as $plato){
         echo "<h3>{$plato->nombre} : {$plato->precio} €</h3>";
         echo "<a href='Veringredientes.php?id={$plato->id}'>Ver Ingredientes</a> ";
+        echo "<form action='Borrar.php' method='POST'>";
+        echo "<input type='hidden' name='id' value='{$plato->id}'>";
+        echo "<button type='submit'>Borrar</button>";
+        echo "</form>";
     }
     ?>
 

@@ -331,7 +331,56 @@ Mejora el ejercicio anterior de manera que el programa traduzca correctamente au
 
 Crea un array de 5 números de dos formas distintas. Investiga qué ocurre al crear un array con el constructor pasándole un único número, y cómo crear correctamente un array que contenga solo ese número. Explica la diferencia en un comentario.
 
-*/
 
-Array =[0, 1, 2, 3, 4, 5]
-Array = new Array(1, 2, 3, 4, 5)
+
+let a =[0, 1, 2, 3, 4, 5]
+let b = new Array(1, 2, 3, 4, 5)
+
+console.log(a);
+console.log(b);
+
+
+
+Ordena el array [10, 9, 1, 100, 25] con el método de ordenación de Array sin argumentos. Explica por qué el resultado no es el esperado y corrígelo para que se ordene de menor a mayor. Después ordénalo de mayor a menor.
+
+
+
+let numeros = [10, 9, 1, 100, 25]
+numeros.sort();
+console.log(numeros);
+
+numeros.sort((a, b) => a - b);
+console.log(numeros);
+
+
+Crea una función sumar(numeros) que devuelva la suma de todos los elementos de un array numérico. Con un array vacío debe devolver 0.
+
+*/ 
+
+function sumar(numeros) {
+  return numeros.reduce((acumulado, n) => acumulado + n, 0);
+}
+
+
+console.log(sumamas1([1, 2, 3]));
+
+
+Crea una función sumar(numeros) que devuelva la suma de todos los elementos de un array numérico. Con un array vacío debe devolver 0.
+
+const sumar = (a, b) => a + b;
+
+
+
+Crea una función pares(numeros) que devuelva un nuevo array con los números pares. El array original no debe modificarse.
+
+
+
+function pares(numeros) {
+  return numeros.filter(n => n % 2 === 0);
+}
+
+let numoriginales = [1, 2, 3, 4, 5, 6];
+let soloPares = pares(numoriginales);
+
+  */
+
